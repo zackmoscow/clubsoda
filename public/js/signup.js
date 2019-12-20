@@ -3,15 +3,18 @@ $(document).ready(function() {
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
-  var clubInput = $("input#club-input");
-  var adminInput = $("input#admin-input");
+  var clubInput = $("select#club-input");
+  var adminInput = $("select#admin-input");
   var clubs = [];
 
   function getClubs() {
     $.get("/api/clubs", {
     })
     .then(function (data) {
-      clubs = data;
+      clubs.push(data);
+      clubs.forEach(club => {
+        clubInput.append(`<option>${club.club_name}</option>`)
+      })
     })
   };
 
@@ -60,6 +63,6 @@ $(document).ready(function() {
   }
 
   getClubs();
-  
+
 });
 
