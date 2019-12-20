@@ -43,4 +43,15 @@ module.exports = function(app) {
       });
     }
   });
+
+  // Get Clubs
+  app.get("/api/clubs", function(req, res) {
+    db.Club.findAll()
+      .then(function () {
+        res.json({
+          club: res.club.club_name
+        }) 
+      });  
+  });
+
 };

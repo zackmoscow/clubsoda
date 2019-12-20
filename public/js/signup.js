@@ -5,6 +5,17 @@ $(document).ready(function() {
   var passwordInput = $("input#password-input");
   var clubInput = $("input#club-input");
   var adminInput = $("input#admin-input");
+  var clubs = [];
+
+  function getClubs() {
+    $.get("/api/clubs", {
+    })
+    .then(function (data) {
+      clubs = data;
+    })
+  };
+
+  //NEED TO SEND CLUBS ARRAY TO SIGNUP FORM FIELD!!!//
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
@@ -47,4 +58,8 @@ $(document).ready(function() {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+
+  getClubs();
+  
 });
+
