@@ -3,8 +3,20 @@ $(document).ready(function() {
   var signUpForm = $("form.signup");
   var emailInput = $("input#email-input");
   var passwordInput = $("input#password-input");
-  var clubInput = $("input#club-input");
-  var adminInput = $("input#admin-input");
+  var clubInput = $("select#club-input");
+  var adminInput = $("select#admin-input");
+  var clubs = [];
+
+  function getClubs() {
+    $.get("/api/clubs", {
+    })
+    .then(function (data) {
+      clubs = data;
+      clubs.forEach(club => {
+        clubInput.append(`<option value="${club.club_name}">${club.club_name}</option>`)
+      })
+    })
+  };
 
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", function(event) {
@@ -12,9 +24,11 @@ $(document).ready(function() {
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
-      club: clubInput,
-      admin: adminInput
+      club: clubInput.val()[0],
+      admin: adminInput.val()[0]
     };
+
+    console.log(userData);
 
     if (!userData.email || !userData.password || !userData.club || !userData.admin) {
       return;
@@ -23,8 +37,6 @@ $(document).ready(function() {
     signUpUser(userData.email, userData.password, userData.club, userData.admin);
     emailInput.val("");
     passwordInput.val("");
-    clubInput.val("");
-    adminInput;
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
@@ -38,7 +50,6 @@ $(document).ready(function() {
     })
       .then(function(data) {
         window.location.replace("/members");
-        // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }
@@ -47,4 +58,8 @@ $(document).ready(function() {
     $("#alert .msg").text(err.responseJSON);
     $("#alert").fadeIn(500);
   }
+
+  getClubs();
+
 });
+
