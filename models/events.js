@@ -5,15 +5,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
     },
     date_of: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: false
     },
     start_at: {
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
       allowNull: false
     },
     end_at: {
-      type: DataTypes.TIME,
+      type: DataTypes.STRING,
       allowNull: false
     },
     club_id: {
