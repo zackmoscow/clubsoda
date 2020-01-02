@@ -17,7 +17,7 @@ CREATE TABLE events(
     date_of VARCHAR(30) NOT NULL,
     start_at VARCHAR (0) NOT NULL,
     end_at VARCHAR (0) NOT NULL,
-    club_id INT NOT NULL,
+    club_id VARCHAR (50),
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
     PRIMARY KEY (id)
