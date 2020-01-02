@@ -14,9 +14,9 @@ CREATE TABLE user(
 CREATE TABLE events(
     id INT NOT NULL AUTO_INCREMENT,
     event VARCHAR(30),
-    date_of DATE NOT NULL,
-    start_at TIME (0) NOT NULL,
-    end_at TIME (0) NOT NULL,
+    date_of VARCHAR(30) NOT NULL,
+    start_at VARCHAR (0) NOT NULL,
+    end_at VARCHAR (0) NOT NULL,
     club_id INT NOT NULL,
     createdAt DATETIME NOT NULL,
     updatedAt DATETIME NOT NULL,
