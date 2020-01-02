@@ -71,12 +71,11 @@ module.exports = function(app) {
   });
 
   // Get Specific Events
-  app.get('/api/events/:id', function(req, res) {
+  app.get('/api/events/:club_name', function(req, res) {
     db.Events.findAll({
       where: {
-        id: req.params.id
+        club_id: req.params.club_name
       },
-      include: [db.Clubs]
     })
       .then(function (result) {
         const data = JSON.parse(JSON.stringify(result));
