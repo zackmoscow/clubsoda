@@ -6,7 +6,7 @@ $(document).ready(function() {
     })
     .then(function (data) {
       getClubs(data.club);
-      // getEvents(data.club);
+      getEvents(data.club);
     });
   };
 
@@ -27,15 +27,25 @@ $(document).ready(function() {
   };
 
   function getEvents(club) {
-    let club_id = club || "";
-    if (club_id) {
-      club_id = "/?club_id=" + club_id;
+    let club_name = club || "";
+    if (club_name) {
+      club_name = "/?club_name=" + club_name;
+      console.log(club_name);
     }
-    $.get("/api/events" + club_id, function(data) {
+    $.get("/api/events/" + club, function(data) {
       console.log(data);
     })
     .then(function (data) {
-
+      for (i = 0; i < data.length; i++) {
+        $("#events").append(data[i].event);
+        $("#events").append("<br>");
+        $("#events").append(data[i].date_of);
+        $("#events").append("<br>");
+        $("#events").append(data[i].start_at);
+        $("#events").append("<br>");
+        $("#events").append(data[i].end_at);
+        $("#events").append("<br>");
+      };
     });
   };
 
