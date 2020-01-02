@@ -1,12 +1,24 @@
+var clubName;
+
 $(document).ready(function() {
   
+  var createEventForm = $("form.createEvent");
+  var eventNameInput = $("input#newEventNameSelect");
+  var eventDayInput = $("input#newEventDay");
+  var eventYearInput = $("input#newEventYear");
+  var eventMonthInput = $("select#newEventMonth");
+  var eventStartInput = $("select#newEventStartTime");
+  var eventEndInput = $("select#newEventEndTime");
+
   function getUserClub() {
     $.get("/api/user_data/", function(data) {
       console.log(data);
     })
     .then(function (data) {
+      $(".member-name").text(data.email);
       getClubs(data.club);
       getEvents(data.club);
+      clubName = data.club;
     });
   };
 
@@ -20,9 +32,8 @@ $(document).ready(function() {
       console.log(data);
     })
     .then(function (data) {
-      $("#memberclub").append(data[0].club_name);
-      $("#memberclub").append("<br>")
-      $("#memberclub").append(data[0].club_description);
+      $("#clubName").text(data[0].club_name);
+      $("#clubDescription").text(data[0].club_description);
     });
   };
 
@@ -37,17 +48,40 @@ $(document).ready(function() {
     })
     .then(function (data) {
       for (i = 0; i < data.length; i++) {
-        $("#events").append(data[i].event);
-        $("#events").append("<br>");
-        $("#events").append(data[i].date_of);
-        $("#events").append("<br>");
-        $("#events").append(data[i].start_at);
-        $("#events").append("<br>");
-        $("#events").append(data[i].end_at);
-        $("#events").append("<br>");
+        $("#eventTable").append("Event: " + data[i].event);
+        $("#eventTable").append("<br>");
+        $("#eventTable").append("Date: " + data[i].date_of);
+        $("#eventTable").append("<br>");
+        $("#eventTable").append("Start Time: " + data[i].start_at);
+        $("#eventTable").append("<br>");
+        $("#eventTable").append("End Time: " + data[i].end_at);
+        $("#eventTable").append("<br>");
+        $("#eventTable").append("<br>");
       };
     });
   };
+
+  createEventForm.on("submit", function(event) {
+    event.preventDefault();
+    var eventData = {
+      event: eventNameInput.val().trim(),
+      date_of: `${eventYearInput.val().trim()}-${eventMonthInput.val().trim()}-${eventDayInput.val().trim()}`,
+      start_at: eventStartInput.val(),
+      end_at: eventEndInput.val(),
+    };
+
+    console.log(eventData);
+
+    if (!eventData.event || !eventData.date_of || !eventData.start_at || !eventData.end_at) {
+      return;
+    }
+    
+    postEvent(eventData.event, eventData.date_of, eventData.start_at, eventData.end_at, clubName);
+      eventNameInput.val("");
+      eventDayInput.val("");
+      eventYearInput.val("");
+    
+  });
 
   function postEvent(event, date_of, start_at, end_at, club_id) {
     $.post("/api/createevent", {
@@ -60,7 +94,12 @@ $(document).ready(function() {
       .then(function(data) {
         window.location.reload();
       })
-      .catch(err);
+      .catch(handleEventErr);
+  }
+
+  function handleEventErr(err) {
+    $("#alert .msg").text(err.responseJSON);
+    $("#alert").fadeIn(500);
   }
 
   getUserClub();
