@@ -1,3 +1,71 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url(https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BBWiQaf.img?h=768&w=1080&m=6&q=60&o=t&l=f);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: whitesmoke;
+}
+
+#logo {
+ width: 20%;
+ height: auto;
+ margin-left: 2%;
+ opacity: 1;   
+}
+
+/* .temptables {
+  border: 1px solid red;
+} */
+
+a {
+  color: whitesmoke;
+}
+
+.heading {
+  background-color: 
+  #000000;
+  opacity: .75;
+  height: fit-content;  
+  width: 100%;  
+}
+
+
+.jumbotron {
+  opacity: .9; 
+  /* border: 1px solid blue; */
+  background-color: 
+  #000000;
+}
+
+.mainContainer {
+  opacity: .75; 
+  border: 1px solid whitesmoke;
+  background-color: 
+  #000000;
+  border-radius: 5px;
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+#logout{
+  float: right;
+}
+
+.memberClubs {
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  opacity: 1;
+}
+

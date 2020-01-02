@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
+    <title>Home Page</title>
+</head>
+
+<body>
+
+    <div class="heading">
+        <div class="row">
+            <div class="col-8">
+            <img id="logo" src="logo_rev2-2.png" alt="logo">
+        </div>
+        <div class="col-4">
+            <a class="navbar-brand" id="logout" href="/logout">
+                Logout
+            </a>
+        </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+    <div class="mainContainer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>Welcome <span class="member-name"></span></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container memberClubs">
+        <div class="row">
+            <h3>Clubs as Organizer</h3>
+        </div>
+        <div class="row">
+            <div class="col-4 temptables" id="adminClubID">
+                #adminClubID
+            </div>
+            <div class="col-4 temptables" id="adminClubName">
+                #adminClubName
+            </div>
+            <div class="col-4 temptables" id="adminClubLocation">
+                #adminClubLocation
+            </div>
+            <div class="col-12 temptables" id="adminDescription">
+                #adminDescription
+            </div>
+        </div>
+    </div>
+
+    <div class="container memberClubs">
+        <div class="row">
+            <h3>Clubs as Member</h3>
+        </div>
+        <div class="row">
+            <div class="col-4 temptables" id="memberClubID">
+                #memberClubID
+            </div>
+            <div class="col-4 temptables" id="memberClubName">
+                #memberClubName
+            </div>
+            <div class="col-4 temptables" id="memberClubLocation">
+                #memberClubLocation
+            </div>
+            <div class="col-12 temptables" id="memberDescription">
+                #memberDescription
+            </div>
+        </div>
+    </div>
+
+    <div class="container memberClubs">
+        <div class="row">
+            <h3>Scheduled Events</h3>
+        </div>
+        <div class="row">
+            <div class="col-3 temptables" id="scheduledEventName">
+                #scheduledEventName
+            </div>
+            <div class="col-3 temptables" id="scheduledEventDate">
+                #scheduledEventDate
+            </div>
+            <div class="col-3 temptables" id="scheduledEventStart">
+                #scheduledEventStart
+            </div>       
+            <div class="col-3 temptables" id="scheduledEventEnd">
+                #scheduledEventEnd
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <button href="#">Create New Club</button>
+</div>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/members.js"></script>
+</body>
+
+</html>
