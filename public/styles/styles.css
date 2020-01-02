@@ -56,6 +56,10 @@ a {
   margin-bottom: 5%;
 }
 
+#logout{
+  float:right;
+}
+
 #home{
   float: right;
 }
@@ -82,7 +86,8 @@ a {
   width:50%;
 }
 .btn {
-  background-color: whitesmoke;
+  background-color: gray;
+  
 }
 .signUpContainer {
   margin-left:auto;
@@ -96,6 +101,16 @@ a {
   margin-top: 5%;
   margin-bottom: 5%;
   width:70%;
+}
+
+.modal-backdrop{
+  display: none;
+}
+
+.modal-content{
+  background-color: black;
+  border: 1px whitesmoke solid;
+  opacity: 1;
 }
 
 
