@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./style.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="./styles/styles.css" media="screen" title="no title" charset="utf-8">
     <title>Home Page</title>
 </head>
 
@@ -13,7 +13,7 @@
     <div class="heading">
         <div class="row">
             <div class="col-8">
-            <img id="logo" src="logo_rev2-2.png" alt="logo">
+            <img id="logo" src="./img/logo_rev2-2.png" alt="logo">
         </div>
         <div class="col-4">
             <a class="navbar-brand" id="logout" href="/logout">
@@ -101,12 +101,193 @@
     </div>
     <br>
     <br>
-    <button href="#">Create New Club</button>
-</div>
-</div>
+    <!-- ============================= -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="js/members.js"></script>
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+    Create Club
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Create Club</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                
+                <div class="container">
+                    <div class="row">
+                        <form>
+                            <div class="form-group">
+                                <label for="newClubName">Club Name:</label>
+                                <input type="text" class="form-control" id="newClubName" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="newClubDescription">Description:</label>
+                                <input type="text" class="form-control" id="newClubDescription" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="newClubLocation">Location:</label>
+                                <input type="text" class="form-control" id="newClubLocation">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop2">
+    Create Event
+  </button>
+  
+  <!-- Modal -->
+
+  <div class="modal fade" id="staticBackdrop2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Create Event</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+                
+            
+                <h2>Create Event</h2>
+                <div class="container">
+                    <div class="row">
+                        <form>
+                            <div class="form-group">
+                                <label for="newClubNameSelect"></label>
+                                <input type="text" class="form-control" id="newEventNameSelect" placeholder="Club Name:">
+                            </div>
+                            <div class="form-group">
+                                <label for="newEventDay"></label>
+                                <input type="text" class="form-control" id="newEventDay" placeholder="Day:">
+                            </div>
+                            <div class="form-group">
+                              <label for="newEventYear"></label>
+                              <input type="text" class="form-control" id="newEventYear" placeholder="Year:">
+                          </div>
+                            <div class="form-row align-items-center">
+                                <div class="col-auto my-1">
+                                    <label class="mr-sm-2 sr-only" for="newEventMonth">Month</label>
+                                    <select class="custom-select mr-sm-2" id="newEventMonth">
+                                        <option selected>month</option>
+                                        <option value="1">Jan</option>
+                                        <option value="2">Feb</option>
+                                        <option value="3">March</option>
+                                        <option value="4">April</option>
+                                        <option value="5">May</option>
+                                        <option value="6">June</option>
+                                        <option value="7">July</option>
+                                        <option value="8">Aug</option>
+                                        <option value="9">Sept</option>
+                                        <option value="10">Oct</option>
+                                        <option value="11">Nov</option>
+                                        <option value="12">Dec</option>
+                                    </select>
+                                </div>
+                                <br>
+                                <div class="form-row align-items-center">
+                                  <div class="col-auto my-1">
+                                      <label class="mr-sm-2 sr-only" for="newEventStartTime">Time</label>
+                                      <select class="custom-select mr-sm-2" id="newEventStartTime">
+                                          <option selected>Start Time</option>
+                                          <option value="1AM">1AM</option>
+                                          <option value="2AM">2AM</option>
+                                          <option value="3AM">3AM</option>
+                                          <option value="4AM">4AM</option>
+                                          <option value="5AM">5AM</option>
+                                          <option value="6AM">6AM</option>
+                                          <option value="7AM">7AM</option>
+                                          <option value="8AM">8AM</option>
+                                          <option value="9AM">9AM</option>
+                                          <option value="10AM">10AM</option>
+                                          <option value="11AM">11AM</option>
+                                          <option value="12AM">12AM</option>
+                                          <option value="1PM">1PM</option>
+                                          <option value="2PM">2PM</option>
+                                          <option value="3PM">3PM</option>
+                                          <option value="4PM">4PM</option>
+                                          <option value="5PM">5PM</option>
+                                          <option value="6PM">6PM</option>
+                                          <option value="7PM">7PM</option>
+                                          <option value="8PM">8PM</option>
+                                          <option value="9PM">9PM</option>
+                                          <option value="10PM">10PM</option>
+                                          <option value="11PM">11PM</option>
+                                          <option value="12PM">12PM</option>
+                                      </select>
+                                  </div>
+                              </div>
+                                <br>                        
+                                <div class="form-row align-items-center">
+                                  <div class="col-auto my-1">                            
+                                      <label class="mr-sm-2 sr-only" for="newEventEndTime">Time</label>
+                                      <select class="custom-select mr-sm-2" id="newEventEndTime">
+                                          <option selected>End Time</option>
+                                          <option value="1AM">1AM</option>
+                                          <option value="2AM">2AM</option>
+                                          <option value="3AM">3AM</option>
+                                          <option value="4AM">4AM</option>
+                                          <option value="5AM">5AM</option>
+                                          <option value="6AM">6AM</option>
+                                          <option value="7AM">7AM</option>
+                                          <option value="8AM">8AM</option>
+                                          <option value="9AM">9AM</option>
+                                          <option value="10AM">10AM</option>
+                                          <option value="11AM">11AM</option>
+                                          <option value="12AM">12AM</option>
+                                          <option value="1PM">1PM</option>
+                                          <option value="2PM">2PM</option>
+                                          <option value="3PM">3PM</option>
+                                          <option value="4PM">4PM</option>
+                                          <option value="5PM">5PM</option>
+                                          <option value="6PM">6PM</option>
+                                          <option value="7PM">7PM</option>
+                                          <option value="8PM">8PM</option>
+                                          <option value="9PM">9PM</option>
+                                          <option value="10PM">10PM</option>
+                                          <option value="11PM">11PM</option>
+                                          <option value="12PM">12PM</option>
+                                      </select>
+                                  </div>
+                              </div>
+                        </form>
+                    </div>
+                </div>
+           
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

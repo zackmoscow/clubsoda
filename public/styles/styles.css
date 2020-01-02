@@ -57,6 +57,10 @@ a {
 }
 
 #logout{
+  float:right;
+}
+
+#home{
   float: right;
 }
 
@@ -68,4 +72,45 @@ a {
   margin-bottom: 5%;
   opacity: 1;
 }
+.loginContainer {
+  margin-left:auto;
+  margin-right:auto;
+  opacity: .75; 
+  border: 1px solid whitesmoke;
+  background-color: 
+  #000000;
+  border-radius: 5px;
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width:50%;
+}
+.btn {
+  background-color: gray;
+  
+}
+.signUpContainer {
+  margin-left:auto;
+  margin-right:auto;
+  opacity: .75; 
+  border: 1px solid whitesmoke;
+  background-color: 
+  #000000;
+  border-radius: 5px;
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width:70%;
+}
+
+.modal-backdrop{
+  display: none;
+}
+
+.modal-content{
+  background-color: black;
+  border: 1px whitesmoke solid;
+  opacity: 1;
+}
+
 
