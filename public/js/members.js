@@ -1,22 +1,33 @@
 $(document).ready(function() {
-  // This file just does a GET request to figure out which user is logged in
-  // and updates the HTML on the page
-  function getClubs(club) {
-    club_id = club || "";
-    if (club_id) {
-      club_id = "/?club_id=" + club_id;
-    }
-    $.get("/api/clubs" + club_id, function(data) {
+  
+  function getUserClub() {
+    $.get("/api/user_data/", function(data) {
       console.log(data);
     })
     .then(function (data) {
-      clubs = data;
-      
+      getClubs(data.club);
+      // getEvents(data.club);
+    });
+  };
+
+  function getClubs(club) {
+    let club_name = club || "";
+    if (club_name) {
+      club_name = "/?club_name=" + club_name;
+      console.log(club_name);
+    }
+    $.get("/api/clubs/" + club, function(data) {
+      console.log(data);
+    })
+    .then(function (data) {
+      $("#memberclub").append(data[0].club_name);
+      $("#memberclub").append("<br>")
+      $("#memberclub").append(data[0].club_description);
     });
   };
 
   function getEvents(club) {
-    club_id = club || "";
+    let club_id = club || "";
     if (club_id) {
       club_id = "/?club_id=" + club_id;
     }
@@ -41,5 +52,7 @@ $(document).ready(function() {
       })
       .catch(err);
   }
+
+  getUserClub();
 
 });

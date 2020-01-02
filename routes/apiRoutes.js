@@ -56,15 +56,16 @@ module.exports = function(app) {
   });
 
   // Get Specific Club
-  app.get('/api/clubs/:id', function(req, res) {
+  app.get('/api/clubs/:club_name', function(req, res) {
+    console.log(req.params);
     db.Clubs.findAll({
       where: {
-        id: req.params.id
+        club_name: req.params.club_name
       },
-      include: [db.User]
+      // include: [db.User]
     }).then(function(result) {
       const data = JSON.parse(JSON.stringify(result));
-      console.log(data);
+      console.log("KEY FOR API" + data);
       res.json(data);
     });
   });
