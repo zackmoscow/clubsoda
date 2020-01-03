@@ -92,6 +92,7 @@ module.exports = function(app) {
     console.log(req.body);
     db.Events.create({
       event: req.body.event,
+      place: req.body.place, 
       date_of: req.body.date_of,
       start_at: req.body.start_at,
       end_at: req.body.end_at,

@@ -4,6 +4,7 @@ $(document).ready(function() {
   
   var createEventForm = $("form.createEvent");
   var eventNameInput = $("input#newEventNameSelect");
+  var eventPlaceInput = $("input#newEventPlaceSelect");
   var eventDayInput = $("input#newEventDay");
   var eventYearInput = $("input#newEventYear");
   var eventMonthInput = $("select#newEventMonth");
@@ -50,6 +51,8 @@ $(document).ready(function() {
       for (i = 0; i < data.length; i++) {
         $("#eventTable").append("Event: " + data[i].event);
         $("#eventTable").append("<br>");
+        $("#eventTable").append("Location: " + data[i].place);
+        $("#eventTable").append("<br>");
         $("#eventTable").append("Date: " + data[i].date_of);
         $("#eventTable").append("<br>");
         $("#eventTable").append("Start Time: " + data[i].start_at);
@@ -65,6 +68,7 @@ $(document).ready(function() {
     event.preventDefault();
     var eventData = {
       event: eventNameInput.val().trim(),
+      place: eventPlaceInput.val().trim(),
       date_of: `${eventYearInput.val().trim()}-${eventMonthInput.val().trim()}-${eventDayInput.val().trim()}`,
       start_at: eventStartInput.val(),
       end_at: eventEndInput.val(),
@@ -72,20 +76,22 @@ $(document).ready(function() {
 
     console.log(eventData);
 
-    if (!eventData.event || !eventData.date_of || !eventData.start_at || !eventData.end_at) {
+    if (!eventData.event || !eventData.place ||!eventData.date_of || !eventData.start_at || !eventData.end_at) {
       return;
     }
     
-    postEvent(eventData.event, eventData.date_of, eventData.start_at, eventData.end_at, clubName);
+    postEvent(eventData.event, eventData.place, eventData.date_of, eventData.start_at, eventData.end_at, clubName);
       eventNameInput.val("");
+      eventPlaceInput.val("");
       eventDayInput.val("");
       eventYearInput.val("");
     
   });
 
-  function postEvent(event, date_of, start_at, end_at, club_id) {
+  function postEvent(event, place, date_of, start_at, end_at, club_id) {
     $.post("/api/createevent", {
       event: event,
+      place: place, 
       date_of: date_of,
       start_at: start_at,
       end_at: end_at,

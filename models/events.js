@@ -4,10 +4,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    // location: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    // },
+    place: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     date_of: {
       type: DataTypes.STRING,
       allowNull: false
