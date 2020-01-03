@@ -76,6 +76,9 @@ module.exports = function(app) {
       where: {
         club_id: req.params.club_name
       },
+      order: [
+        ['date_of', 'ASC'],
+      ],
     })
       .then(function (result) {
         const data = JSON.parse(JSON.stringify(result));
