@@ -30,9 +30,7 @@ a {
 }
 
 .heading {
-  background-color: 
-  #000000;
-  opacity: .75;
+  background-color: rgba(0,0,0,.8); 
   height: fit-content;  
   width: 100%;  
 }
@@ -46,10 +44,8 @@ a {
 }
 
 .mainContainer {
-  opacity: .75; 
   border: 1px solid whitesmoke;
-  background-color: 
-  #000000;
+  background-color: rgba(0,0,0,.8);
   border-radius: 5px;
   padding: 5%;
   margin-top: 5%;
@@ -75,10 +71,8 @@ a {
 .loginContainer {
   margin-left:auto;
   margin-right:auto;
-  opacity: .75; 
   border: 1px solid whitesmoke;
-  background-color: 
-  #000000;
+  background-color: rgba(0,0,0,.8);
   border-radius: 5px;
   padding: 5%;
   margin-top: 5%;
@@ -87,15 +81,13 @@ a {
 }
 .btn {
   background-color: gray;
-  
+  border: 1px solid black;
 }
 .signUpContainer {
   margin-left:auto;
   margin-right:auto;
-  opacity: .75; 
   border: 1px solid whitesmoke;
-  background-color: 
-  #000000;
+  background-color: rgba(0,0,0,.8);
   border-radius: 5px;
   padding: 5%;
   margin-top: 5%;
@@ -113,4 +105,9 @@ a {
   opacity: 1;
 }
 
+.btn:hover{
+  background-color:black;
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+}
 
