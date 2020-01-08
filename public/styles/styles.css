@@ -14,6 +14,10 @@ body {
   color: whitesmoke;
 }
 
+.mr-sm-2 sr-only{
+  margin: auto;
+}
+
 #logo {
  width: 20%;
  height: auto;

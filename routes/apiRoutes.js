@@ -1,5 +1,6 @@
 var db = require('../models');
 var passport = require('../config/passport');
+var compression = require('compression');
 
 module.exports = function(app) {
 
