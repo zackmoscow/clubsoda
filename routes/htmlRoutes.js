@@ -1,7 +1,6 @@
 var db = require("../models");
 var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
-var compression = require('compression');
 
 module.exports = function(app) {
 
